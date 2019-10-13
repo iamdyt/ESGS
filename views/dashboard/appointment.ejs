@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../partial/bootstrap %>
+    <title>Appointment | STD Expert System</title>
+</head>
+<body class='bg-sky-blue'>
+  <div class="jumbotron jumbotron-fluid bg-sky-blue">
+    <p class="display-4 text-light text-center">DASHBOARD</p>
+    <p class="lead text-light text-center">Welcome, <%=locals.user.toUpperCase() %> <a href="/logout">(Logout)</a> </p>
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="/admin/dashboard" class="text-nurse-blue">Symptoms</a></li>
+                    <li class="list-group-item"><a href="/dashboard/appointment" class="text-nurse-blue">Appointment</a></li>
+                    <li class="list-group-item"><a href="/logout" class="text-nurse-blue">Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-8 mb-2">
+                <div class="card">
+                    <div class="card-header">DashBoard</div>
+                    <div class="card-body">
+                            <table class="table table-striped">
+                                   <%if (appointments.length>0){%>
+                                    <thead>
+                                            <tr>
+                                              <th scope="col">Sender's Name</th>
+                                              <th scope="col">Message</th>
+                                              <th scope="col">E-mail</th>                                        
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                              <%for (app of appointments){ %>
+                                                  <tr>
+                                                      <th scope="row"><%=app.name%></th>
+                                                      <td><%=app.message%></td>
+                                                      <td><%=app.email%></td>
+                                                      <td><a href="/dashboard/appointment/<%=app.SN%>"><i class="fas text-danger fa-trash"></i></a> </td>                                                    
+                                                  </tr>
+                                              <%}%>
+                                              
+                                          </tbody>
+                                   <% } else {  %>
+                                    <p class="lead text-center">No Appointment</p>
+                                    <%}%>
+                                  </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

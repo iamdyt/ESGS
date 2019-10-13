@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../partial/bootstrap %>
+    <title> Update Symptom | STD Expert System</title>
+</head>
+<body class='bg-sky-blue'>
+  <div class="jumbotron jumbotron-fluid bg-sky-blue">
+    <p class="display-4 text-light text-center">DASHBOARD</p>
+    <p class="lead text-light text-center">Welcome, <%=locals.user.toUpperCase() %> <a href="/logout">(Logout)</a> </p>
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 shadow p-3">
+               <form action="/admin/dashboard/<%=symptom.SN %>/update" method='post' class="form-group">
+                   <input name='symp' required type="text" value='<%=symptom.Question%>' class="form-control mb-2">
+                   <input required name='type' type="text" value='<%=symptom.Type%>' class="form-control">
+                   <div class="text-center">
+                    <button class="btn btn-nurse-blue mt-2 btn-block text-light">Update</button>
+                   </div>
+               </form>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

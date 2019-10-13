@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <% include ../partial/bootstrap %>
-    <title>STD Expert System</title>
+    <title> Result | STD Expert System</title>
 </head>
 <body class='bg'>
   <div class="jumbotron jumbotron-fluid bg-sky-blue">
@@ -19,9 +19,9 @@
                <p class="text-jusitfy text-nurse-blue"><%-text %></p>
                <div class='mt-5 p-3 shadow-sm'>
                    <form action="/appointment" method="POST" class="form-group">
-                       <input type="text" name='name' placeholder="Full Name" class="form-control"> <br>
-                       <input name='email'  placeholder='Valid Email Here' type="email" class="form-control"> <br>
-                       <textarea name="message" placeholder="Your Message Here" id="" cols="30" class="form-control" rows="3"></textarea>
+                       <input required type="text" name='name' placeholder="Full Name" class="form-control"> <br>
+                       <input name='email' required  placeholder='Valid Email Here' type="email" class="form-control"> <br>
+                       <textarea name="message" required placeholder="Your Message Here" id="" cols="30" class="form-control" rows="3"></textarea>
                        <div class="text-center mt-4">
                         <button class="btn  shadow text-light pl-4 pr-4  btn-nurse-blue">Book a schedule &rarr;</button>
                        </div>
@@ -43,7 +43,6 @@
   
 
 
-  <!-- Scripts -->
-  <script src="/js/custom.js"></script>
+ 
 </body>
 </html>

@@ -36,7 +36,7 @@ module.exports = {
             }
         } else{
             const text = `
-            <p class='text-nurse-blue text-justify'> System can only if and only if you choose related symptoms you experience,
+            <p class='text-nurse-blue text-justify'> System can only function if and only if you choose related symptoms you experience,
             kindly go back to choose perceived symptoms.</p>
         ` 
             res.render('diagnosis/result', {text});

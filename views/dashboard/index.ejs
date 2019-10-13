@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <% include ../partial/bootstrap %>
-    <title>STD Expert System</title>
+    <title>Dashboard | STD Expert System</title>
 </head>
 <body class='bg-sky-blue'>
   <div class="jumbotron jumbotron-fluid bg-sky-blue">
     <p class="display-4 text-light text-center">DASHBOARD</p>
-    <p class="lead text-light text-center">Welcome, <%=locals.user.toUpperCase() %> <a href="">(Logout)</a> </p>
+    <p class="lead text-light text-center">Welcome, <%=locals.user.toUpperCase() %> <a href="/logout">(Logout)</a> </p>
     <section class="container">
         <div class="row">
             <div class="col-lg-4">
                 <ul class="list-group">
-                    <li class="list-group-item"><a href="" class="text-nurse-blue">Symptoms</a></li>
-                    <li class="list-group-item"><a href="" class="text-nurse-blue">Appointment</a></li>
-                    <li class="list-group-item"><a href="" class="text-nurse-blue">Logout</a></li>
+                    <li class="list-group-item"><a href="/admin/dashboard/add" class="text-nurse-blue">Add Symptoms</a></li>
+                    <li class="list-group-item"><a href="/admin/dashboard" class="text-nurse-blue">All Symptoms</a></li>
+                    <li class="list-group-item"><a href="/dashboard/appointment" class="text-nurse-blue">Appointment</a></li>
+                    <li class="list-group-item"><a href="/logout" class="text-nurse-blue">Logout</a></li>
                 </ul>
             </div>
 
-            <div class="col-lg-8">
+            <div class="col-lg-8 mb-2">
                 <div class="card">
                     <div class="card-header">DashBoard</div>
                     <div class="card-body">
@@ -31,16 +32,20 @@
                                         <th scope="col">S/N</th>
                                         <th scope="col">Symptoms</th>
                                         <th scope="col">Type</th>
+                                        <th scope="col">Manage</th>
                                         
                                       </tr>
                                     </thead>
                                     <tbody>
-                                      <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
+                                        <%for (symp of symptoms){ %>
+                                            <tr>
+                                                <th scope="row"><%=symp.SN%></th>
+                                                <td><%=symp.Question%></td>
+                                                <td><%=symp.Type%></td>
+                                                <td><a href="/admin/dashboard/<%=symp.SN%>/edit"><i class="fas text-nurse-blue fa-edit"></i></a> &emsp; <a href="/admin/dashboard/<%=symp.SN%>/delete"><i class="fas text-danger fa-trash"></i></a> </td>                                                    
+                                            </tr>
+                                        <%}%>
                                         
-                                      </tr>
                                     </tbody>
                                   </table>
                     </div>
@@ -48,8 +53,5 @@
             </div>
         </div>
     </section>
-
-  <!-- Scripts -->
-  <script src="/js/custom.js"></script>
 </body>
 </html>
