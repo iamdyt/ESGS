@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../partial/bootstrap %>
+    <title>STD Expert System</title>
+</head>
+<body class='bg'>
+  <div class="jumbotron jumbotron-fluid bg-sky-blue">
+    <p class="display-4 text-light text-center">INSTRUCTIONS</p>
+    <p class="lead text-light text-center">Welcome, this Expert System uses preloaded knowledge to infer your diagnosis status, <br> and should not replace the attention of a trained physician, carefully answer the questions <br> below as per your symptoms and wait to get result, prescription or consult a physician.   
+    <div class="text-center">
+      <a href="#symptoms" class="btn btn-nurse-blue text-light pl-5 pr-5"> Let go &DownArrow;</a>
+   </div>
+  </div>
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <h1 class="display-3 ml-5 text-nurse-blue" id='symptoms'>Symptoms</h1><hr>
+        <table>
+            <form action="/diagnoseme" method="POST">
+                <% for (question of questions) {  %>
+                <tr><td><p class='text-nurse-blue lead ml-3'><%=question.SN %>. <%= question.Question%> </p></td> <td><input type="checkbox" id='check' name='answer[]' class=''></td></tr>
+                <% } %>
+                <button class="btn btn-block mb-1  btn-nurse-blue text-lg text-light" id='button' >Submit</button>
+            </form>
+        </table>
+        
+      </div>
+      <div class="col-lg-6" id="col2">
+          <h1 class="display-3 ml-5 text-nurse-blue hidden" id='result'>Result</h1>
+        <img src="../img/top_service.png" height="1em" class="img-fluid" id='rightimg' alt="">
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Scripts -->
+  <script src="/js/custom.js"></script>
+</body>
+</html>
