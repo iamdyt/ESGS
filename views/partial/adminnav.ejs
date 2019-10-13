@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-md navbar-dark text-white" style="background-color:#082E5C;">
+        <a class="navbar-brand" href="/admin/dashboard">
+            <p class="">EXSG</p>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    
+            </ul>
+            <span>Hello, <%=locals.user.toUpperCase()%></span> &nbsp&nbsp
+    
+            <form id="logout-form" method="GET" action="/logout" class="form-inline my-2 my-lg-0">
+             <button type="submit" class="btn btn-outline-primary text-white">Log out</button>
+            </form>
+        </div>
+    </nav>
+    <div class="nav-scroller bg-white box-shadow">
+        <nav class="nav nav-underline">
+    
+                    <a class="nav-link active" href="/admin/dashboard">Dashboard</a>
+            <a class="nav-link " href="/admin/dashboard">Symptoms</a>
+            <a class="nav-link " href="/admin/dashboard/add">Add Symptoms</a>
+                    <a class="nav-link " href="/dashboard/appointment">Appointment</a>
+        </nav>
