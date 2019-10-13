@@ -14,16 +14,30 @@
 
    <section class="container">
        <div class="row">
-           <div class="col-lg-6 mb-2">
-               <div class="card">
-                   <div class="card-header">
-                       <p class="lead text-center">Test Summary</p>
-                   </div>
-                   <div class="card-body">
-                        <%-text %>
-                   </div>
+           <div class="col-lg-4 mb-2 ">
+               <p class="display-4">RESULT</p>
+               <p class="text-jusitfy text-nurse-blue"><%-text %></p>
+               <div class='mt-5 p-3 shadow-sm'>
+                   <form action="/appointment" method="POST" class="form-group">
+                       <input type="text" name='name' placeholder="Full Name" class="form-control"> <br>
+                       <input name='email'  placeholder='Valid Email Here' type="email" class="form-control"> <br>
+                       <textarea name="message" placeholder="Your Message Here" id="" cols="30" class="form-control" rows="3"></textarea>
+                       <div class="text-center mt-4">
+                        <button class="btn  shadow text-light pl-4 pr-4  btn-nurse-blue">Book a schedule &rarr;</button>
+                       </div>
+                   </form>
                </div>
            </div>
+           
+           <div class="col-lg-4">
+               <img src="/img/service.png" class='img-fluid' alt="">
+           </div>
+
+           <div class="col-lg-4 mb-2">
+               <p class="display-4">TREATMENT</p>
+                <p class='text-justify text-nurse-blue'>Adults with gonorrhea are treated with antibiotics. Due to emerging strains of drug-resistant Neisseria gonorrhoeae, the Centers for Disease Control and Prevention recommends that uncomplicated gonorrhea be treated only with the antibiotic ceftriaxone — given as an injection — in combination with either azithromycin (Zithromax, Zmax) or doxycycline (Monodox, Vibramycin, others) — two antibiotics that are taken orally.Some research indicates that oral gemifloxacin (Factive) or injectable gentamicin, combined with oral azithromycin, is highly successful in treating gonorrhea. This treatment may be helpful in treating people who are allergic to cephalosporin antibiotics, such as ceftriaxone.</p>
+
+            </div>
        </div>
    </section>
   

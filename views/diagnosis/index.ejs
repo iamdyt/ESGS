@@ -18,14 +18,14 @@
     <div class="row mt-5">
       <div class="col-lg-6">
         <h1 class="display-3 ml-5 text-nurse-blue" id='symptoms'>Symptoms</h1><hr>
-        <table>
             <form action="/diagnoseme" method="POST">
+              <table>
                 <% for (question of questions) {  %>
-                <tr><td><p class='text-nurse-blue lead ml-3'><%=question.SN %>. <%= question.Question%> </p></td> <td><input type="checkbox" id='check' name='answer[]' class=''></td></tr>
+                <tr><td><p class='text-nurse-blue lead ml-3'><%=question.SN %>. <%= question.Question%> </p></td> <td><input type="checkbox" id='check' name='answer' class=''></td></tr>
                 <% } %>
+              </table>
                 <button class="btn btn-block mb-1  btn-nurse-blue text-lg text-light" id='button' >Submit</button>
             </form>
-        </table>
         
       </div>
       <div class="col-lg-6" id="col2">
