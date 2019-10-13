@@ -23,6 +23,11 @@ app.use(session({
    })
 }))
 
+app.use('*',(req,res,next)=>{
+    app.locals.user = req.session.username
+    next()
+});
+
 app.use('/', routes)
 app.listen(PORT, ()=>{
     console.log("Server Started @ "+PORT)

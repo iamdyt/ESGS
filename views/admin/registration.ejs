@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../partial/bootstrap %>
+    <title>STD Expert System</title>
+</head>
+<body class='bg-sky-blue'>
+  <div class="jumbotron jumbotron-fluid bg-sky-blue">
+    <p class="display-4 text-light text-center">ADMINISTRATOR REGISTRATION</p>
+    <p class="lead text-light text-center">Welcome, kindly fill all fields correctly before submitting, <br> a successful registration will redirect you to login page.  
+    
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                    <div class='mt-2 p-3 shadow-sm'>
+                            <form action="/admin/register" method="POST" class="form-group">
+                                <input type="text" name='username' required placeholder="Username" class="form-control"> <br>
+                                <input name='password'required placeholder='Your Password Here' type="password" class="form-control"> <br>
+                                <div class="text-center mt-4">
+                                 <button class="btn  shadow text-light pl-4 pr-4  btn-nurse-blue">Register &plus;</button>
+                                </div>
+                            </form>
+                        </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Scripts -->
+  <script src="/js/custom.js"></script>
+</body>
+</html>

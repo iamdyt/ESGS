@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../partial/bootstrap %>
+    <title>STD Expert System</title>
+</head>
+<body class='bg-sky-blue'>
+  <div class="jumbotron jumbotron-fluid bg-sky-blue">
+    <p class="display-4 text-light text-center">DASHBOARD</p>
+    <p class="lead text-light text-center">Welcome, <%=locals.user.toUpperCase() %> <a href="">(Logout)</a> </p>
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="" class="text-nurse-blue">Symptoms</a></li>
+                    <li class="list-group-item"><a href="" class="text-nurse-blue">Appointment</a></li>
+                    <li class="list-group-item"><a href="" class="text-nurse-blue">Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">DashBoard</div>
+                    <div class="card-body">
+                            <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">S/N</th>
+                                        <th scope="col">Symptoms</th>
+                                        <th scope="col">Type</th>
+                                        
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Scripts -->
+  <script src="/js/custom.js"></script>
+</body>
+</html>
