@@ -9,14 +9,24 @@
 </head>
 <body class='bg'>
   <div class="jumbotron jumbotron-fluid bg-sky-blue">
-    <p class="display-4 text-light text-center">RESULTS</p>
-    <p class="lead text-light text-center">The system infer that <%=text %></p>
-    <div class="text-center">
-      <a href="#symptoms" class="btn btn-nurse-blue text-light pl-5 pr-5"> Let go &DownArrow;</a>
+    <p class="display-4 text-light text-center">RESULTS SUMMARY</p>
    </div>
-  
-  </section>
 
+   <section class="container">
+       <div class="row">
+           <div class="col-lg-6 mb-2">
+               <div class="card">
+                   <div class="card-header">
+                       <p class="lead text-center">Test Summary</p>
+                   </div>
+                   <div class="card-body">
+                        <%-text %>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+  
 
 
   <!-- Scripts -->
